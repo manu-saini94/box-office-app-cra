@@ -26,12 +26,13 @@ const Home = () => {
       return <div>Error Occured:{apiDataError.message}</div>;
     }
     if (apiData) {
-      return apiData.map(data => {
-        return <div key={data.show.id}>{data.show.name}</div>;
-      });
+      return apiData.map(data => (
+        <div key={data.show.id}>{data.show.name}</div>
+      ));
     }
     return null;
   };
+
   return (
     <div>
       <form onSubmit={onSearch}>
