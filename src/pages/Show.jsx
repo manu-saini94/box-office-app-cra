@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getShowById } from '../api/tvmaze';
 import { useQuery } from 'react-query';
 import ShowMainData from '../components/shows/ShowMainData';
@@ -35,12 +35,22 @@ const Show = () => {
     queryFn: () => getShowById(showId),
   });
 
+  // const navigateTo = useNavigate();
+
+  // const onGoBack = () => {
+  //   navigateTo('/');
+  // };
+
   if (showError) {
     return <div>We have an error: {showError.message}</div>;
   }
   if (showData) {
     return (
       <div>
+        <Link to="/"> Go back to home</Link>
+        {/* <button type="button" onClick={onGoBack}>
+          Go back to home
+        </button> */}
         <ShowMainData
           image={showData.image}
           name={showData.name}
