@@ -5,8 +5,32 @@ import ActorsGrid from '../components/actors/ActorsGrid';
 import ShowsGrid from '../components/shows/ShowsGrid';
 import { useQuery } from 'react-query';
 
+// const reducerFn = (currentCounter, action) => {
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return currentCounter + 1;
+//     case 'DECREMENT':
+//       return currentCounter - 1;
+//     case 'RESET':
+//       return 0;
+//   }
+//   return 0;
+// };
 const Home = () => {
   const [filter, setFilter] = useState(null);
+
+  // const [counter, dispatch] = useReducer(reducerFn, 0);
+
+  // const onIncrement = () => {
+  //   dispatch({ type: 'INCREMENT' });
+  // };
+  // const onDecrement = () => {
+  //   dispatch({ type: 'DECREMENT' });
+  // };
+  // const onReset = () => {
+  //   dispatch({ type: 'RESET' });
+  // };
+
   // const [apiData, setApiData] = useState(null);
   // const [apiDataError, setApiDataError] = useState(null);
 
@@ -57,6 +81,17 @@ const Home = () => {
   return (
     <div>
       <SearchForm onSearch={onSearch} />
+      {/* <div>Counter: {counter}</div>
+      <button type="button" onClick={onIncrement}>
+        Increment
+      </button>
+      <button type="button" onClick={onDecrement}>
+        Decrement
+      </button>
+      <button type="button" onClick={onReset}>
+        Reset
+      </button> */}
+
       <div>{renderApiData()}</div>
     </div>
   );
