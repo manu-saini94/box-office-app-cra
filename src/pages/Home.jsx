@@ -4,6 +4,7 @@ import SearchForm from '../components/SearchForm';
 import ActorsGrid from '../components/actors/ActorsGrid';
 import ShowsGrid from '../components/shows/ShowsGrid';
 import { useQuery } from 'react-query';
+import { TextCenter } from '../components/common/TextCenter';
 
 // const reducerFn = (currentCounter, action) => {
 //   switch (action.type) {
@@ -72,11 +73,11 @@ const Home = () => {
 
   const renderApiData = () => {
     if (apiDataError) {
-      return <div>Error Occured:{apiDataError.message}</div>;
+      return <TextCenter>Error Occured:{apiDataError.message}</TextCenter>;
     }
 
     if (apiData?.length === 0) {
-      return <div>No Results</div>;
+      return <TextCenter>No Results</TextCenter>;
     }
     if (apiData) {
       return apiData[0].show ? (
